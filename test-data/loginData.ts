@@ -1,0 +1,11 @@
+export const loginData = {
+    validuser:{
+    username: "Admin",
+    password: "admin123"
+    },
+
+      invalidUser: {
+    username: "Admin123",
+    password: "admin123",
+  },
+};
