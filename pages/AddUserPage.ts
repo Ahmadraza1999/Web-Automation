@@ -63,6 +63,9 @@ export class AddUser {
         await this.page.getByRole('button', { name: addUser.saveButton }).click();
     }
 
+    async verifyUseradded(){
+        expect(this.page.getByText("Successfully Saved"));
+    }
 }
 
-//a
+

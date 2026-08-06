@@ -7,4 +7,5 @@ export const addUser = {
     passWord: '//label[text()="Password"]/ancestor::div[contains(@class,"oxd-input-group")]//input',
     confirmPassword: '//label[text()="Confirm Password"]/ancestor::div[contains(@class,"oxd-input-group")]//input',
     saveButton: "Save",
+    message: "oxd-toaster_1",
 }

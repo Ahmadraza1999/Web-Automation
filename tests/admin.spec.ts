@@ -26,11 +26,12 @@ test("user should naviagate to the Admin Page", async ({ page }) => {
 
     await adduser.createuser();
     await adduser.selectUserRole();
-    //await adduser.selectStatusDropdown();
+    await adduser.selectStatusDropdown();
     await adduser.selectEmployeeName();
     await adduser.selectUserName();
     await adduser.setPassword();
     await adduser.saveButton();
+    await adduser.verifyUseradded();
 
 
 })
