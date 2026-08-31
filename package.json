@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "admin": "playwright test admin.spec.ts"
+    "admin": "playwright test admin.spec.ts",
+    "Qa": "env=qa playwright test",
+    "Stg": "env=stg playwright test",
+    "Prod": "env=prod playwright test"
   },
   "keywords": [],
   "author": "",

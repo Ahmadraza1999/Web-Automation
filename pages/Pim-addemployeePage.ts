@@ -25,12 +25,26 @@ export class Pim {
       }
 
 
-      await this.page.locator(pimlocators.username).nth(0).fill(addemployee.logindetails.username);
-      await this.page.getByText("Enabled").click();
-       
-      
-      await this.page.locator(pimlocators.password).first().fill(addemployee.logindetails.password);
-      await this.page.locator(pimlocators.confirmpassword).nth(1).fill(addemployee.logindetails.password);
+      await this.page.getByRole('textbox').nth(5).fill(addemployee.logindetails.username);
+
+      // await this.page.locator(pimlocators.usernamecontainer).nth(0)
+      //    .locator(pimlocators.userrname).fill(addemployee.logindetails.username);
+
+
+      await this.page.locator(pimlocators.passwordcontainer).first()
+         .locator(pimlocators.password).first().fill(addemployee.logindetails.password);
+
+
+      await this.page.locator(pimlocators.confirmpassword)
+         .fill(addemployee.logindetails.password);
+
+
+       await this.page.getByRole('button', {name: pimlocators.savebutton}).click();
+
+       await expect (this.page.getByText("Successfully saved")).toBeVisible();
    }
 
+
+
+   
 }
