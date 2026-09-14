@@ -7,7 +7,9 @@
     "admin": "playwright test admin.spec.ts",
     "Qa": "env=qa playwright test",
     "Stg": "env=stg playwright test",
-    "Prod": "env=prod playwright test"
+    "Prod": "env=prod playwright test",
+    "bddgen": "bddgen",
+    "bdd": "bddgen && playwright test"
   },
   "keywords": [],
   "author": "",
@@ -15,7 +17,8 @@
   "type": "commonjs",
   "devDependencies": {
     "@playwright/test": "^1.61.1",
-    "@types/node": "^26.1.1"
+    "@types/node": "^26.1.1",
+    "playwright-bdd": "^9.2.1"
   },
   "dependencies": {
     "dotenv": "^17.4.2"

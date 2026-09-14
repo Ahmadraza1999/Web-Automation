@@ -19,9 +19,9 @@ test("user should naviagate to the Admin Page", async ({ page }) => {
     );
     await dashboardPage.verifyDashboardLoaded();
 
-    await adminpage.openadminpage();
+    await adminpage.openAdminPage();
 
-    await adminpage.verifyadminpage();
+    await adminpage.verifyAdminPage();
 
     await adduser.createuser();
     await adduser.selectUserRole();

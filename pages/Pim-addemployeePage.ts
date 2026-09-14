@@ -13,7 +13,7 @@ export class Pim {
       await this.page.locator(pimlocators.image).setInputFiles('/Users/mac/Desktop/employee.png');
       await this.page.getByPlaceholder(pimlocators.firstName).fill(addemployee.personaldetails.firstName);
       await this.page.getByPlaceholder(pimlocators.lastName).fill(addemployee.personaldetails.lastName);
-      await this.page.getByRole('textbox').nth(4).fill(addemployee.personaldetails.employeeId);
+
 
    }
 
@@ -27,10 +27,6 @@ export class Pim {
 
       await this.page.getByRole('textbox').nth(5).fill(addemployee.logindetails.username);
 
-      // await this.page.locator(pimlocators.usernamecontainer).nth(0)
-      //    .locator(pimlocators.userrname).fill(addemployee.logindetails.username);
-
-
       await this.page.locator(pimlocators.passwordcontainer).first()
          .locator(pimlocators.password).first().fill(addemployee.logindetails.password);
 
@@ -39,12 +35,16 @@ export class Pim {
          .fill(addemployee.logindetails.password);
 
 
-       await this.page.getByRole('button', {name: pimlocators.savebutton}).click();
+      await this.page.getByRole('button', { name: pimlocators.savebutton }).click();
 
-       await expect (this.page.getByText("Successfully saved")).toBeVisible();
+
+   }
+   async verifyEmployeeAdded() {
+      await expect(
+         this.page.getByText("Successfully Saved")
+      ).toBeVisible();
    }
 
 
 
-   
 }

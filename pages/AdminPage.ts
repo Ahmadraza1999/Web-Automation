@@ -6,11 +6,11 @@ export class AdminPage {
 
   }
 
-  async openadminpage() {
+  async openAdminPage() {
     await this.page.getByRole("link", { name: adminlocators.admin }).click();
   }
 
-  async verifyadminpage() {
+  async verifyAdminPage() {
     await expect(this.page.locator(adminlocators.adminMenu)).toBeVisible();
   }
 
