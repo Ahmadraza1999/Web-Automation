@@ -7,3 +7,4 @@ Feature: Add Employee
     And I add a new employee
     And I create login details for the employee
     Then the employee should be successfully added
+    And I should be navigated to the Personal Details page
