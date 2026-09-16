@@ -28,12 +28,14 @@ When('I create login details for the employee', async ({ page }) => {
     await pim.createlogindetails();
 });
 
-When('the employee should be successfully added', async ({ page }) => {
+Then('the employee should be successfully added', async ({ page }) => {
     const pim = new Pim(page);
 
-    await pim.verifyEmployeeAdded();
+    await pim.verifyEmployeeDetailsPage();
 });
+Then('I should be navigated to the Personal Details page', async ({ page }) => {
+    const pim = new Pim(page);
 
-
-
+    await pim.verifyEmployeeDetailsPage();
+});
 

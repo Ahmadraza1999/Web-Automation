@@ -43,8 +43,18 @@ export class Pim {
       await expect(
          this.page.getByText("Successfully Saved")
       ).toBeVisible();
+
    }
 
+   async verifyEmployeeDetailsPage() {
+      await this.page.waitForURL(
+         /viewPersonalDetails\/empNumber\/\d+/,
+         { timeout: 30000 }
+      );
 
+      await expect(
+         this.page.getByRole('heading', { name: 'Personal Details' })
+      ).toBeVisible();
+   }
 
 }
